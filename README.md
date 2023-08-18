@@ -18,3 +18,12 @@
     - Data Binding implemented
   - Login Navigation Graph
 - Home Activity
+
+
+
+
+# Screenshots
+![signIn_light.png](screenshots%2FsignIn_light.png)
+![signIn_dark.png](screenshots%2FsignIn_dark.png)
+![signUp_light.png](screenshots%2FsignUp_light.png)
+![signUp_dark.png](screenshots%2FsignUp_dark.png)
