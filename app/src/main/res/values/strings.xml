@@ -3,4 +3,8 @@
     <string name="hello_world">Hello World!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in_btn">Sign In</string>
+    <string name="sign_up">Sign Up?</string>
+    <string name="sign_up_btn">Sign Up</string>
+    <string name="sign_in">Sign In?</string>
 </resources>

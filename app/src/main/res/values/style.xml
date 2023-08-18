@@ -1,8 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="style_main_text_view">
+    <style name="style_img_logo">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">@dimen/_210sdp</item>
+        <item name="android:src">@drawable/logo</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+    </style>
 
+    <style name="style_text_field_email_login">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">"Email"</item>
+    </style>
+
+    <style name="style_edit_text_email_login">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+
+    <style name="style_text_field_password_login">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">"Password"</item>
+    </style>
+
+    <style name="style_edit_text_password_login">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="style_btn_signin">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">@dimen/_40sdp</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+        <item name="android:text">@string/sign_in_btn</item>
+        <item name="android:backgroundTint">@color/md_theme_light_surfaceTint</item>
+        <item name="android:textColor">@color/md_theme_light_onSecondary</item>
+    </style>
+
+    <style name="style_text_signup">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/sign_up</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:textColor">@color/md_theme_dark_background</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+    </style>
+
+    <style name="style_text_field_name_signup">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">"Name"</item>
+    </style>
+
+    <style name="style_edit_text_name_signup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textPersonName</item>
+    </style>
+
+    <style name="style_text_field_confirm_password_signup">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">"Confirm Password"</item>
+    </style>
+
+    <style name="style_edit_text_confirm_password_signup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="style_btn_signup">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">@dimen/_40sdp</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+        <item name="android:text">@string/sign_up_btn</item>
+        <item name="android:backgroundTint">@color/md_theme_light_surfaceTint</item>
+        <item name="android:textColor">@color/md_theme_light_onSecondary</item>
+    </style>
+
+    <style name="style_text_signin">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/sign_in</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:textColor">@color/md_theme_dark_background</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
     </style>
 
 </resources>
