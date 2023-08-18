@@ -1,17 +1,35 @@
 package com.mahrukhdev.petfinderapp_kotlin.ui.views.splash
 
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import androidx.databinding.DataBindingUtil
 import com.mahrukhdev.petfinderapp_kotlin.R
+import com.mahrukhdev.petfinderapp_kotlin.databinding.ActivityMainBinding
+import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentSignUpBinding
 import com.mahrukhdev.petfinderapp_kotlin.ui.views.auth.LoginActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        when (this?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                binding.mainLayout.background.alpha = 120
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+                binding.mainLayout.background.alpha = 255
+            }
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> {
+                binding.mainLayout.background.alpha = 255
+            }
+        }
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
