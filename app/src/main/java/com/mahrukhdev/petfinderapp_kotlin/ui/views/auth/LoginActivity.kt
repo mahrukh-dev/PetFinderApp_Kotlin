@@ -1,4 +1,4 @@
-package com.mahrukhdev.petfinderapp_kotlin.ui.views
+package com.mahrukhdev.petfinderapp_kotlin.ui.views.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,11 +1,12 @@
-package com.mahrukhdev.petfinderapp_kotlin
+package com.mahrukhdev.petfinderapp_kotlin.ui.views.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
-import com.mahrukhdev.petfinderapp_kotlin.ui.views.LoginActivity
+import com.mahrukhdev.petfinderapp_kotlin.R
+import com.mahrukhdev.petfinderapp_kotlin.ui.views.auth.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

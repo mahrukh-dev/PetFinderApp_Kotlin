@@ -1,90 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.views.SignUp"
-    android:background="@drawable/background"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/signup_img_logo"
-        style="@style/style_img_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_text_name"
-        app:layout_constraintStart_toStartOf="@id/signup_img_logo"
-        app:layout_constraintTop_toBottomOf="@id/signup_img_logo"
-        app:layout_constraintEnd_toEndOf="@id/signup_img_logo"
-        style="@style/style_text_field_name_signup"
-        >
+        <variable
+            name="signup_viewmodel"
+            type="com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.SignUpViewModel" />
+    </data>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/signup_edit_text_name"
-            style="@style/style_edit_text_name_signup"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.views.auth.SignUp"
+        android:background="@drawable/background">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_text_email"
-        app:layout_constraintStart_toStartOf="@id/signup_text_name"
-        app:layout_constraintTop_toBottomOf="@id/signup_text_name"
-        app:layout_constraintEnd_toEndOf="@id/signup_text_name"
-        style="@style/style_text_field_email_login"
-        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/signup_img_logo"
+            style="@style/style_img_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/signup_edit_text_email"
-            style="@style/style_edit_text_email_login"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_text_name"
+            app:layout_constraintStart_toStartOf="@id/signup_img_logo"
+            app:layout_constraintTop_toBottomOf="@id/signup_img_logo"
+            app:layout_constraintEnd_toEndOf="@id/signup_img_logo"
+            style="@style/style_text_field_name_signup">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_text_password"
-        app:layout_constraintStart_toStartOf="@id/signup_text_email"
-        app:layout_constraintTop_toBottomOf="@id/signup_text_email"
-        app:layout_constraintEnd_toEndOf="@id/signup_text_email"
-        style="@style/style_text_field_password_login"
-        >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_edit_text_name"
+                style="@style/style_edit_text_name_signup" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/signup_edit_text_password"
-            style="@style/style_edit_text_password_login"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_text_email"
+            app:layout_constraintStart_toStartOf="@id/signup_text_name"
+            app:layout_constraintTop_toBottomOf="@id/signup_text_name"
+            app:layout_constraintEnd_toEndOf="@id/signup_text_name"
+            style="@style/style_text_field_email_login">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/signup_text_confirm_password"
-        app:layout_constraintStart_toStartOf="@id/signup_text_password"
-        app:layout_constraintTop_toBottomOf="@id/signup_text_password"
-        app:layout_constraintEnd_toEndOf="@id/signup_text_password"
-        style="@style/style_text_field_confirm_password_signup"
-        >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_edit_text_email"
+                style="@style/style_edit_text_email_login" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/signup_edit_text_confirm_password"
-            style="@style/style_edit_text_confirm_password_signup"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_text_password"
+            app:layout_constraintStart_toStartOf="@id/signup_text_email"
+            app:layout_constraintTop_toBottomOf="@id/signup_text_email"
+            app:layout_constraintEnd_toEndOf="@id/signup_text_email"
+            style="@style/style_text_field_password_login">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signup_btn_signup"
-        style="@style/style_btn_signup"
-        app:layout_constraintEnd_toEndOf="@+id/signup_text_confirm_password"
-        app:layout_constraintStart_toStartOf="@+id/signup_text_confirm_password"
-        app:layout_constraintTop_toBottomOf="@+id/signup_text_confirm_password" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_edit_text_password"
+                style="@style/style_edit_text_password_login" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/signup_text_signin"
-        style="@style/style_text_signin"
-        app:layout_constraintEnd_toEndOf="@+id/signup_btn_signup"
-        app:layout_constraintTop_toBottomOf="@+id/signup_btn_signup" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signup_text_confirm_password"
+            app:layout_constraintStart_toStartOf="@id/signup_text_password"
+            app:layout_constraintTop_toBottomOf="@id/signup_text_password"
+            app:layout_constraintEnd_toEndOf="@id/signup_text_password"
+            style="@style/style_text_field_confirm_password_signup">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signup_edit_text_confirm_password"
+                style="@style/style_edit_text_confirm_password_signup" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_btn_signup"
+            style="@style/style_btn_signup"
+            app:layout_constraintEnd_toEndOf="@+id/signup_text_confirm_password"
+            app:layout_constraintStart_toStartOf="@+id/signup_text_confirm_password"
+            app:layout_constraintTop_toBottomOf="@+id/signup_text_confirm_password" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signup_text_signin"
+            style="@style/style_text_signin"
+            app:layout_constraintEnd_toEndOf="@+id/signup_btn_signup"
+            app:layout_constraintTop_toBottomOf="@+id/signup_btn_signup" />
 
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
