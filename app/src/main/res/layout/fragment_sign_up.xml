@@ -11,11 +11,11 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/signUpLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.views.auth.SignUp"
-        android:background="@drawable/background">
+        android:background="@drawable/background"
+        tools:context=".ui.views.auth.SignUp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/signup_img_logo"
@@ -26,10 +26,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_name"
-            app:layout_constraintStart_toStartOf="@id/signup_img_logo"
-            app:layout_constraintTop_toBottomOf="@id/signup_img_logo"
+            style="@style/style_text_field_name_signup"
             app:layout_constraintEnd_toEndOf="@id/signup_img_logo"
-            style="@style/style_text_field_name_signup">
+            app:layout_constraintStart_toStartOf="@id/signup_img_logo"
+            app:layout_constraintTop_toBottomOf="@id/signup_img_logo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_name"
@@ -38,10 +38,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_email"
-            app:layout_constraintStart_toStartOf="@id/signup_text_name"
-            app:layout_constraintTop_toBottomOf="@id/signup_text_name"
+            style="@style/style_text_field_email_login"
             app:layout_constraintEnd_toEndOf="@id/signup_text_name"
-            style="@style/style_text_field_email_login">
+            app:layout_constraintStart_toStartOf="@id/signup_text_name"
+            app:layout_constraintTop_toBottomOf="@id/signup_text_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_email"
@@ -50,10 +50,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_password"
-            app:layout_constraintStart_toStartOf="@id/signup_text_email"
-            app:layout_constraintTop_toBottomOf="@id/signup_text_email"
+            style="@style/style_text_field_password_login"
             app:layout_constraintEnd_toEndOf="@id/signup_text_email"
-            style="@style/style_text_field_password_login">
+            app:layout_constraintStart_toStartOf="@id/signup_text_email"
+            app:layout_constraintTop_toBottomOf="@id/signup_text_email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_password"
@@ -62,10 +62,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_confirm_password"
-            app:layout_constraintStart_toStartOf="@id/signup_text_password"
-            app:layout_constraintTop_toBottomOf="@id/signup_text_password"
+            style="@style/style_text_field_confirm_password_signup"
             app:layout_constraintEnd_toEndOf="@id/signup_text_password"
-            style="@style/style_text_field_confirm_password_signup">
+            app:layout_constraintStart_toStartOf="@id/signup_text_password"
+            app:layout_constraintTop_toBottomOf="@id/signup_text_password">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_confirm_password"

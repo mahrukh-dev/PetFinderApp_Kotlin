@@ -1,6 +1,7 @@
 package com.mahrukhdev.petfinderapp_kotlin.ui.views.auth
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,6 +40,21 @@ class SignIn : Fragment() {
         }
         binding.signinTextSignup.setOnClickListener {
             findNavController().navigate(R.id.action_signIn_to_signUp)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        when (context?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+                binding.signInLayout.background.alpha = 120
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+                binding.signInLayout.background.alpha = 255
+            }
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> {
+                binding.signInLayout.background.alpha = 255
+            }
         }
     }
 
