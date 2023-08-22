@@ -2,20 +2,43 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/constraintLayoutAnimal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.home.AnimalFragment">
+    android:background="@drawable/background"
+    tools:context=".ui.views.home.AnimalFragment"
+    android:padding="@dimen/_20sdp"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/animal_img"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/hello_blank_fragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="358dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/animal_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Animal Name"
+        app:layout_constraintStart_toStartOf="@+id/animal_img"
+        app:layout_constraintTop_toBottomOf="@+id/animal_img" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/animal_btn_fav"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:clickable="true"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintEnd_toEndOf="@+id/animal_img"
+        app:layout_constraintTop_toBottomOf="@+id/animal_img"
+        android:contentDescription="add/remove favorite pet" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,10 +17,7 @@ import com.mahrukhdev.petfinderapp_kotlin.utils.hideActionBar
 class SignInFragment : BaseFragmentV2<FragmentSignInBinding>(R.layout.fragment_sign_in) {
 
     private val viewModel: SignInViewModel by viewModels()
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        (activity as AppCompatActivity).hideActionBar()
-//    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

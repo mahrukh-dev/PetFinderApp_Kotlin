@@ -18,11 +18,6 @@ class SignUpFragment : BaseFragmentV2<FragmentSignUpBinding>(R.layout.fragment_s
 
 
     private val viewModel: SignUpViewModel by viewModels()
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        (activity as AppCompatActivity).hideActionBar()
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
