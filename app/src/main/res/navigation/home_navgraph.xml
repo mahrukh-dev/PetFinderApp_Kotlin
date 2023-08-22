@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_animal" />
     <fragment
         android:id="@+id/petNearYouFragment"
-        android:name="com.mahrukhdev.petfinderapp_kotlin.PetNearYouFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.PetNearYouFragment"
         android:label="fragment_pet_near_you"
         tools:layout="@layout/fragment_pet_near_you" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/petCategoryFragment"
-        android:name="com.mahrukhdev.petfinderapp_kotlin.PetCategoryFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.PetCategoryFragment"
         android:label="fragment_pet_category"
         tools:layout="@layout/fragment_pet_category" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritePetFragment"
-        android:name="com.mahrukhdev.petfinderapp_kotlin.FavoritePetFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.FavoritePetFragment"
         android:label="fragment_favorite_pet"
         tools:layout="@layout/fragment_favorite_pet" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/userProfileFragment"
-        android:name="com.mahrukhdev.petfinderapp_kotlin.UserProfileFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.UserProfileFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
 </navigation>
