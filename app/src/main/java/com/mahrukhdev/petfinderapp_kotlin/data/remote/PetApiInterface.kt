@@ -2,12 +2,16 @@ package com.mahrukhdev.petfinderapp_kotlin.data.remote
 
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
 import com.mahrukhdev.petfinderapp_kotlin.data.model.TokenResponse
+import com.mahrukhdev.petfinderapp_kotlin.data.model.Type
+import com.mahrukhdev.petfinderapp_kotlin.data.model.TypeX
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 public interface PetApiInterface {
 
@@ -22,10 +26,21 @@ public interface PetApiInterface {
     @GET("animals")
     fun getAnimals(
         // Add more query parameters here
+        @Header("Authorization") authorization: String,
+       ): Call<List<Animal>>
+
+    @GET("animals/{id}")
+    fun getAnimalById(
+        @Header("Authorization") authorization: String,
+        @Path("id") animalId: String
+    ): Call<Animal>
+
+    @GET("types")
+    fun getAnimalTypes(
         @Header("Authorization") authorizationHeader: String
-    ): Call<List<Animal>>
+    ): Call<List<TypeX>>
 
 
-    @GET("posts")
-    fun fetchAllPosts(): Call<List<Animal>>
+
+
 }

@@ -3,21 +3,21 @@ package com.mahrukhdev.petfinderapp_kotlin.data.repository
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
+import com.mahrukhdev.petfinderapp_kotlin.data.model.Type
+import com.mahrukhdev.petfinderapp_kotlin.data.model.TypeX
 import com.mahrukhdev.petfinderapp_kotlin.data.remote.PetApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.mahrukhdev.petfinderapp_kotlin.data.remote.PetApiInterface
+import com.mahrukhdev.petfinderapp_kotlin.utils.Constants
 
 class AnimalRepository {
 
     private val apiInterface = PetApiClient.getPetApiClient().create(PetApiInterface::class.java)
 
-
     fun getAnimals() : MutableLiveData<List<Animal>?>{
-        val call = apiInterface.getAnimals(
-            "Bearer " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJSSG1RNmptME44NnNwVFAweHdlN3M2UXN0WFk5ZklWMWhZZldPeVdjWm0wNWZHc3prNSIsImp0aSI6IjYzMWE0MTE0OGNjM2IxZDk5MmQxMzJlNWM0MDY5YmZhNzgwNTRlNzE4NzE1ZDNkZWVjNDZjZTQ0MDBiMWJiZjMyM2ZjMGIzYzFjMDgwYjMxIiwiaWF0IjoxNjkyNjE1MTA3LCJuYmYiOjE2OTI2MTUxMDcsImV4cCI6MTY5MjYxODcwNywic3ViIjoiIiwic2NvcGVzIjpbXX0.qT2nHupE2kHzEMF7Bm-6iLHy4n_UxRcw_63m1pIBBHDqaVl_J31q_a_MeMSr6VbOJ4isEW37Z1lVL_xcvt_JRcN24KFhOoaUZGe1OyXwIfo4hBLEloAfX03fI50rqhKfUuhZTr-LmL2jn8CLmJMtZkroL3joo2KpxipPC33Ou__TSSrVrXTXFRHcUc1qsEqQUpoH8dz9w1QOIcoBE6zDIvur3HB9o_7yVcJxN22GmW9hJGXPzKPHPrx_yHV5gk6q7WCVBXnDIEg1UF38vcIWH5kXQrXEt150yGGnLdmwbUV_26Ed5e7MtVYyfy-kGknICboyJm0aPQzAsXCwZffQIw",  // Replace with your actual access token
-        )
+        val call = apiInterface.getAnimals("Bearer ${Constants.TOKEN_VALUE.value}")
 
         var data = MutableLiveData<List<Animal>?>()
 
@@ -42,23 +42,41 @@ class AnimalRepository {
         return data
     }
 
-    fun fetchAllPosts(): MutableLiveData<List<Animal>?> {
-        val data = MutableLiveData<List<Animal>?>()
+    fun getAnimalById(animalID: String): MutableLiveData<Animal?>{
 
+        val call = apiInterface.getAnimalById("Bearer ${Constants.TOKEN_VALUE.value}", animalID)
 
-        apiInterface?.fetchAllPosts()?.enqueue(object : Callback<List<Animal>> {
+        var data = MutableLiveData<Animal?>()
 
-            override fun onFailure(call: Call<List<Animal>>, t: Throwable) {
+        call.enqueue(object : Callback<Animal> {
+            override fun onResponse(call: Call<Animal>,
+                                    response: Response<Animal>) {
+                if (response.isSuccessful) {
+                    var animal = response.body()
+                    data.value = animal
+                    // Handle the list of animals here
+                } else {
+                    // Handle error response
+                }
+            }
+            override fun onFailure(call: Call<Animal>, t: Throwable) {
+                // Handle network or other errors
+            }
+        })
+        return data
+    }
+
+    fun getAnimalTypes(): MutableLiveData<List<TypeX>?> {
+        val data = MutableLiveData<List<TypeX>?>()
+
+        apiInterface?.getAnimalTypes("Bearer ${Constants.TOKEN_VALUE.value}" )?.enqueue(object : Callback<List<TypeX>> {
+            override fun onFailure(call: Call<List<TypeX>>, t: Throwable) {
                 data.value = null
             }
 
-            override fun onResponse(
-                call: Call<List<Animal>>,
-                response: Response<List<Animal>>
-            ) {
-
+            override fun onResponse(call: Call<List<TypeX>>, response: Response<List<TypeX>>) {
                 val res = response.body()
-                if (response.code() == 200 && res != null) {
+                if (response.isSuccessful && res != null) {
                     data.value = res
                 } else {
                     data.value = null
@@ -67,5 +85,8 @@ class AnimalRepository {
         })
         return data
     }
+
+
+
 
 }
