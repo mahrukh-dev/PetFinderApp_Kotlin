@@ -3,11 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navgraph"
-    app:startDestination="@id/animalFragment">
+    app:startDestination="@id/petNearYouFragment">
 
     <fragment
         android:id="@+id/animalFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.AnimalFragment"
         android:label="fragment_animal"
         tools:layout="@layout/fragment_animal" />
+    <fragment
+        android:id="@+id/petNearYouFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.PetNearYouFragment"
+        android:label="fragment_pet_near_you"
+        tools:layout="@layout/fragment_pet_near_you" >
+        <action
+            android:id="@+id/action_petNearYouFragment_to_animalFragment"
+            app:destination="@id/animalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petCategoryFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.PetCategoryFragment"
+        android:label="fragment_pet_category"
+        tools:layout="@layout/fragment_pet_category" >
+        <action
+            android:id="@+id/action_petCategoryFragment_to_animalFragment"
+            app:destination="@id/animalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritePetFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.FavoritePetFragment"
+        android:label="fragment_favorite_pet"
+        tools:layout="@layout/fragment_favorite_pet" >
+        <action
+            android:id="@+id/action_favoritePetFragment_to_animalFragment"
+            app:destination="@id/animalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.mahrukhdev.petfinderapp_kotlin.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
 </navigation>
