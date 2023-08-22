@@ -11,6 +11,7 @@ import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.databinding.ActivityMainBinding
 import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentSignUpBinding
 import com.mahrukhdev.petfinderapp_kotlin.ui.views.auth.LoginActivity
+import com.mahrukhdev.petfinderapp_kotlin.utils.hideActionBar
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        hideActionBar()
+
         when (this?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
                 binding.mainLayout.background.alpha = 120

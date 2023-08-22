@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".ui.views.auth.SignUp">
+        tools:context=".ui.views.auth.SignUpFragment">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/signup_img_logo"
@@ -26,6 +26,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_name"
+            app:startIconDrawable="@drawable/name"
             style="@style/style_text_field_name_signup"
             app:layout_constraintEnd_toEndOf="@id/signup_img_logo"
             app:layout_constraintStart_toStartOf="@id/signup_img_logo"
@@ -51,6 +52,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_password"
             style="@style/style_text_field_password_login"
+            app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="@id/signup_text_email"
             app:layout_constraintStart_toStartOf="@id/signup_text_email"
             app:layout_constraintTop_toBottomOf="@id/signup_text_email">
@@ -63,6 +65,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_confirm_password"
             style="@style/style_text_field_confirm_password_signup"
+            app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="@id/signup_text_password"
             app:layout_constraintStart_toStartOf="@id/signup_text_password"
             app:layout_constraintTop_toBottomOf="@id/signup_text_password">
