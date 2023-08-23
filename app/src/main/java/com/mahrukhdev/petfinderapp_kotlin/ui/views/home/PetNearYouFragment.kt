@@ -5,15 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.mahrukhdev.petfinderapp_kotlin.R
+import com.mahrukhdev.petfinderapp_kotlin.data.model.Datasource
+import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentPetNearYouBinding
+import com.mahrukhdev.petfinderapp_kotlin.ui.adapters.FavoriteItemAdapter
+import com.mahrukhdev.petfinderapp_kotlin.ui.adapters.GridListAdapter
+import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
 
-class PetNearYouFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pet_near_you, container, false)
+class PetNearYouFragment : BaseFragmentV2<FragmentPetNearYouBinding>(R.layout.fragment_pet_near_you) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val animalList = Datasource().loadPetsNearYou()
+        binding.petNearRecyclerView.adapter = this.context?.let { GridListAdapter(it, animalList) }
+
     }
 
 }

@@ -8,22 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Datasource
+import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentFavoritePetBinding
 import com.mahrukhdev.petfinderapp_kotlin.ui.adapters.FavoriteItemAdapter
+import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
 
-class FavoritePetFragment : Fragment() {
+class FavoritePetFragment : BaseFragmentV2<FragmentFavoritePetBinding>(R.layout.fragment_favorite_pet) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val animalList = Datasource().loadFavAnimals()
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.fav_pet_recycler_view)
-        recyclerView?.adapter = FavoriteItemAdapter(this, animalList)
-        return inflater.inflate(R.layout.fragment_favorite_pet, container, false)
-
+        binding.favPetRecyclerView.adapter = this.context?.let { FavoriteItemAdapter(it, animalList) }
 
     }
 

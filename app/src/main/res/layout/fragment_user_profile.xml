@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.views.home.UserProfileFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/background"
+        android:padding="50dp"
+        tools:context=".ui.views.home.UserProfileFragment">
 
-</FrameLayout>
+
+        <ImageView
+            android:id="@+id/user_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/user_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_img" />
+
+        <TextView
+            android:id="@+id/user_username_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Username"
+            app:layout_constraintStart_toStartOf="@+id/user_name_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_txt" />
+
+        <TextView
+            android:id="@+id/user_email_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="@+id/user_username_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_username_txt" />
+
+        <TextView
+            android:id="@+id/user_profile_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:text="Your Name"
+            app:layout_constraintStart_toEndOf="@+id/user_name_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_img" />
+
+        <TextView
+            android:id="@+id/user_profile_username_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Your UserName"
+            app:layout_constraintStart_toStartOf="@+id/user_profile_name_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_profile_name_txt" />
+
+        <TextView
+            android:id="@+id/user_profile_email_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Your Email"
+            app:layout_constraintStart_toStartOf="@+id/user_profile_username_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_profile_username_txt" />
+
+        <TextView
+            android:id="@+id/user_password_change_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Change Password"
+            app:layout_constraintStart_toStartOf="@+id/user_email_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_email_txt" />
+
+        <Button
+            android:id="@+id/user_logout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
