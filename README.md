@@ -18,7 +18,11 @@
     - Data Binding implemented
   - Login Navigation Graph
 - Home Activity
-
+  - bottom navigation
+  - drawer
+  - multiple fragments
+  - use of recycler views to create grid view and horizontal views
+- Use of retrofit and API calling
 
 
 
