@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_petNearYouFragment_to_animalFragment"
             app:destination="@id/animalFragment" />
+        <action
+            android:id="@+id/action_petNearYouFragment_to_petCategoryFragment"
+            app:destination="@id/petCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/petCategoryFragment"
@@ -27,6 +30,10 @@
         <action
             android:id="@+id/action_petCategoryFragment_to_animalFragment"
             app:destination="@id/animalFragment" />
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            android:defaultValue="Dog" />
     </fragment>
     <fragment
         android:id="@+id/favoritePetFragment"

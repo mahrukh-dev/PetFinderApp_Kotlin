@@ -6,10 +6,14 @@ import android.os.Handler
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationView
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.AnimalViewModel
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.TokenViewModel
@@ -20,6 +24,9 @@ import com.mahrukhdev.petfinderapp_kotlin.utils.Constants.TOKEN_VALUE
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     private val handler = Handler()
     private val runnable = object : Runnable {
@@ -38,10 +45,15 @@ class HomeActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.home_nav_host) as NavHostFragment
         navController = navHostFragment.navController
 
-        val navGraph = navController.navInflater.inflate(R.navigation.home_navgraph)
-        navController.graph = navGraph
 
         setupActionBarWithNavController(navController)
+        drawerLayout = findViewById(R.id.home_drawer_layout)
+        val navigationView: NavigationView = findViewById(R.id.home_navigation_view)
+        navigationView.setupWithNavController(navController)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+
+        val navGraph = navController.navInflater.inflate(R.navigation.home_navgraph)
+        navController.graph = navGraph
 
         handler.postDelayed(runnable, 3600)
 
@@ -68,4 +80,6 @@ class HomeActivity : AppCompatActivity() {
         })
 
     }
+
+
 }

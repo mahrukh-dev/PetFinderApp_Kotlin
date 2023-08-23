@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/grp_1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/homeFragment"
+            android:title="Pets Near You" />
+
+        <item
+            android:id="@+id/petCategory1"
+            android:title="@string/pet_category_one" />
+
+        <item
+            android:id="@+id/petCategory2"
+            android:title="@string/pet_category_two" />
+
+        <item
+            android:id="@+id/petCategory3"
+            android:title="@string/pet_category_three" />
+
+        <item
+            android:id="@+id/petCategory4"
+            android:title="@string/pet_category_four" />
+
+        <item
+            android:id="@+id/petCategory5"
+            android:title="@string/pet_category_five" />
+     <item
+            android:id="@+id/petCategory6"
+            android:title="@string/pet_category_six" />
+        <item
+            android:id="@+id/petCategory7"
+            android:title="@string/pet_category_seven" />
+        <item
+            android:id="@+id/petCategory8"
+            android:title="@string/pet_category_eight" />
+    </group>
+</menu>

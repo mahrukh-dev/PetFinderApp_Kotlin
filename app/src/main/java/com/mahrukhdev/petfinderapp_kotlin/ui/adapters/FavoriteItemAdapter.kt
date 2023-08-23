@@ -44,6 +44,7 @@ class FavoriteItemAdapter(private val context: Context, private val list: List<A
                 .load(photoUrl)
                 .into(holder.animalImg)
 
+
     }
 
 }

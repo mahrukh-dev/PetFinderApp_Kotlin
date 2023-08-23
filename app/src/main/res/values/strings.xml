@@ -7,4 +7,13 @@
     <string name="sign_up">Sign Up?</string>
     <string name="sign_up_btn">Sign Up</string>
     <string name="sign_in">Sign In?</string>
+    <string name="small_furry"><![CDATA[Small & Furry]]></string>
+    <string name="pet_category_one">Dog</string>
+    <string name="pet_category_two">Cat</string>
+    <string name="pet_category_three">Rabbit</string>
+    <string name="pet_category_four"><![CDATA[Small & Furry]]></string>
+    <string name="pet_category_five">Horse</string>
+    <string name="pet_category_six">Bird</string>
+    <string name="pet_category_seven"><![CDATA[Scales, Fins & Other]]></string>
+    <string name="pet_category_eight">Barnyard</string>
 </resources>
