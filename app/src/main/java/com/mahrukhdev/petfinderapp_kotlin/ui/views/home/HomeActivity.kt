@@ -13,6 +13,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.AnimalViewModel
@@ -45,7 +46,9 @@ class HomeActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.home_nav_host) as NavHostFragment
         navController = navHostFragment.navController
 
-
+        //setting bottom navigation
+        val navView: BottomNavigationView = findViewById(R.id.bottom_nav_view)
+        navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController)
         drawerLayout = findViewById(R.id.home_drawer_layout)
         val navigationView: NavigationView = findViewById(R.id.home_navigation_view)
