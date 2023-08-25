@@ -1,5 +1,6 @@
 package com.mahrukhdev.petfinderapp_kotlin.ui.views.home
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -8,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,6 +29,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private lateinit var listener: NavController.OnDestinationChangedListener
+
 
     private val handler = Handler()
     private val runnable = object : Runnable {
@@ -44,6 +50,9 @@ class HomeActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.home_nav_host) as NavHostFragment
         navController = navHostFragment.navController
 
+        val navGraph = navController.navInflater.inflate(R.navigation.home_navgraph)
+        navController.graph = navGraph
+
         //setting bottom navigation
         val navView: BottomNavigationView = findViewById(R.id.bottom_nav_view)
         navView.setupWithNavController(navController)
@@ -54,10 +63,19 @@ class HomeActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
-        setupActionBarWithNavController(navController)
+        listener = NavController.OnDestinationChangedListener{ controller, destination, arguments ->
 
-        val navGraph = navController.navInflater.inflate(R.navigation.home_navgraph)
-        navController.graph = navGraph
+
+        }
+
+
+
+        setupActionBarWithNavController(navController)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.hamburger)
+        }
+
         handler.postDelayed(runnable, 3600)
 
 
@@ -86,5 +104,22 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+
+    override fun onResume() {
+        super.onResume()
+        navController.addOnDestinationChangedListener(listener)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        navController.removeOnDestinationChangedListener(listener)
+    }
+
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.home_nav_host)
+        return navController.navigateUp(appBarConfiguration)
+                || super.onSupportNavigateUp()
+    }
 
 }

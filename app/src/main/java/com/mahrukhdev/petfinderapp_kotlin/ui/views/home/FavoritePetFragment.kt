@@ -20,6 +20,8 @@ class FavoritePetFragment : BaseFragmentV2<FragmentFavoritePetBinding>(R.layout.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         val animalList = Datasource().loadFavAnimals()
         binding.favPetRecyclerView.adapter =
             this.context?.let { FavoriteItemAdapter(it, animalList) }
