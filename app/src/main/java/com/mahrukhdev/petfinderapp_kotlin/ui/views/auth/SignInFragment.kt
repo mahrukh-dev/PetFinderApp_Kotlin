@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentSignInBinding
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.SignInViewModel
@@ -17,6 +18,8 @@ import com.mahrukhdev.petfinderapp_kotlin.utils.hideActionBar
 class SignInFragment : BaseFragmentV2<FragmentSignInBinding>(R.layout.fragment_sign_in) {
 
     private val viewModel: SignInViewModel by viewModels()
+
+    private lateinit var auth : FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

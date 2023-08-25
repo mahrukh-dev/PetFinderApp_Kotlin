@@ -5,10 +5,12 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.utils.hideActionBar
 
 class LoginActivity : AppCompatActivity() {
+
 
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {

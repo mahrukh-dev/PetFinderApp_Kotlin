@@ -1,6 +1,5 @@
 package com.mahrukhdev.petfinderapp_kotlin.ui.views.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -53,9 +52,9 @@ class HomeActivity : AppCompatActivity() {
         val navigationView: NavigationView = findViewById(R.id.home_navigation_view)
         navigationView.setupWithNavController(navController)
 
-        setupActionBarWithNavController(navController)
-
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+
+        setupActionBarWithNavController(navController)
 
         val navGraph = navController.navInflater.inflate(R.navigation.home_navgraph)
         navController.graph = navGraph

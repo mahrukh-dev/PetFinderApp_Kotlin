@@ -7,6 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentSignUpBinding
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.SignUpViewModel
@@ -18,6 +20,9 @@ class SignUpFragment : BaseFragmentV2<FragmentSignUpBinding>(R.layout.fragment_s
 
 
     private val viewModel: SignUpViewModel by viewModels()
+
+    private lateinit var auth : FirebaseAuth
+    private lateinit var database : FirebaseDatabase
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
