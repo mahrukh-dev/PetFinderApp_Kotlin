@@ -25,7 +25,6 @@ import com.mahrukhdev.petfinderapp_kotlin.utils.Constants.TOKEN_VALUE
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
-
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -49,38 +48,42 @@ class HomeActivity : AppCompatActivity() {
         //setting bottom navigation
         val navView: BottomNavigationView = findViewById(R.id.bottom_nav_view)
         navView.setupWithNavController(navController)
-        setupActionBarWithNavController(navController)
+
         drawerLayout = findViewById(R.id.home_drawer_layout)
         val navigationView: NavigationView = findViewById(R.id.home_navigation_view)
         navigationView.setupWithNavController(navController)
+
+        setupActionBarWithNavController(navController)
+
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
         val navGraph = navController.navInflater.inflate(R.navigation.home_navgraph)
         navController.graph = navGraph
-
         handler.postDelayed(runnable, 3600)
 
 
 
-        Constants.TOKEN_VALUE.observe(this, Observer {
-            //txtV.text= TOKEN_VALUE.value
-        })
 
-        val vm = AnimalViewModel()
-        vm.getAnimals()
-
-
-        vm.animalListLiveData?.observe(this, Observer {
-            if (it != null) {
-                for (a in it) {
-                    Log.d("Home", a.name)
-                    println(a.name)
-                   // txtV.text = it.first().name
-                }
-            } else {
-                Log.d("HOME", "error")
-            }
-        })
+//        Constants.TOKEN_VALUE.observe(this, Observer {
+//            //txtV.text= TOKEN_VALUE.value
+//        })
+//
+//        val vm = AnimalViewModel()
+//        vm.getAnimals()
+//
+//
+//        vm.animalListLiveData?.observe(this, Observer {
+//            if (it != null) {
+//                for (a in it) {
+//                    Log.d("Home", a.name)
+//                    println(a.name)
+//                   // txtV.text = it.first().name
+//                }
+//            } else {
+//                Log.d("HOME", "error")
+//            }
+    //    }
+    //)
 
     }
 
