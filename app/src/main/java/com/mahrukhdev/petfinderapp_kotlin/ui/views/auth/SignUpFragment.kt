@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.mahrukhdev.petfinderapp_kotlin.R
+import com.mahrukhdev.petfinderapp_kotlin.data.model.Users
 import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentSignUpBinding
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.SignUpViewModel
 import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
@@ -78,13 +79,21 @@ class SignUpFragment : BaseFragmentV2<FragmentSignUpBinding>(R.layout.fragment_s
                             //ADD USER DETAILS INTO DATABASE
                             val databaseRef = database.reference.child("users").child(auth.currentUser!!.uid)
                             // You can navigate to the next screen here
+                            val user = Users(name, email, auth.currentUser!!.uid)
+                            databaseRef.setValue(user).addOnCompleteListener{
+                                if(it.isSuccessful){
+                                    findNavController().navigate(R.id.action_signUp_to_signIn)
+                                }
+                                else {
+                                    Toast.makeText(context, "Something went wrong, try again", Toast.LENGTH_SHORT).show()
+                                }
+                            }
                         } else {
                             // Sign-up failed
                             Toast.makeText(context, "Something went wrong, try again", Toast.LENGTH_SHORT).show()
                         }
                     }
 
-                findNavController().navigate(R.id.action_signUp_to_signIn)
             }
 //
 //            startActivity(Intent(context, HomeActivity::class.java))
