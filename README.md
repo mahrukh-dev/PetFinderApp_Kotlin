@@ -23,6 +23,8 @@
   - multiple fragments
   - use of recycler views to create grid view and horizontal views
 - Use of retrofit and API calling
+- Login Activity implemetation via FIREBASE AUTHENTICATION and REAL TIME Database
+- 
 
 
 
