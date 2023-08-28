@@ -13,12 +13,14 @@ class TokenViewModel {
         tokenRepository = TokenRepository()
     }
 
-    fun getToken() {
+    fun getToken(callback: (String?) -> Unit){
         tokenRepository?.getToken { tokenResponse ->
             tokenResponse?.let {
-                Constants.updateTOKEN_VALUE(it.access_token)
+
                 tokenData = it.access_token
-                Log.d("HOME TOKEN VALUE", tokenData ?: "Token data is null")
+
+                callback(tokenData)
+             //   Log.d("HOME TOKEN VALUE", tokenData ?: "Token data is null")
             }
         }
     }

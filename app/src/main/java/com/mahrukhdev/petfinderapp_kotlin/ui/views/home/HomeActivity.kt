@@ -37,7 +37,14 @@ class HomeActivity : AppCompatActivity() {
     private val runnable = object : Runnable {
         override fun run() {
             val tvm = TokenViewModel()
-            tvm.getToken()
+            tvm.getToken { token ->
+                if (token != null) {
+                    //Log.d("HOME TOKEN VALUE", token ?: "Token data is null")
+                } else {
+                    // Handle the case when token is null
+                    println("Token is null")
+                }
+            }
             // Schedule the runnable again after the interval
             handler.postDelayed(this, 3600)
         }

@@ -1,6 +1,7 @@
 package com.mahrukhdev.petfinderapp_kotlin.data.remote
 
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
+import com.mahrukhdev.petfinderapp_kotlin.data.model.AnimalResponse
 import com.mahrukhdev.petfinderapp_kotlin.data.model.TokenResponse
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Type
 import com.mahrukhdev.petfinderapp_kotlin.data.model.TypeX
@@ -27,7 +28,7 @@ public interface PetApiInterface {
     fun getAnimals(
         // Add more query parameters here
         @Header("Authorization") authorization: String,
-       ): Call<List<Animal>>
+       ): Call<AnimalResponse>
 
     @GET("animals/{id}")
     fun getAnimalById(
