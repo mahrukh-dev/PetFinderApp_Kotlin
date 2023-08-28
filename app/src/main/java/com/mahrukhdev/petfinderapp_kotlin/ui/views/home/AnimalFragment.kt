@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mahrukhdev.petfinderapp_kotlin.R
+import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentAnimalBinding
+import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentSignInBinding
+import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
 
-class AnimalFragment : Fragment() {
+class AnimalFragment : BaseFragmentV2<FragmentAnimalBinding>(R.layout.fragment_animal) {
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_animal, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

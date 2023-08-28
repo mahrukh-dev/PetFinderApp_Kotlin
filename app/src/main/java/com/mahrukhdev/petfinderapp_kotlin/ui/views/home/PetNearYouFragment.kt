@@ -1,36 +1,42 @@
 package com.mahrukhdev.petfinderapp_kotlin.ui.views.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.navigation.NavigationView
+import androidx.fragment.app.viewModels
 import com.mahrukhdev.petfinderapp_kotlin.R
-import com.mahrukhdev.petfinderapp_kotlin.data.model.Datasource
+import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
+import com.mahrukhdev.petfinderapp_kotlin.data.model.AnimalCallback
 import com.mahrukhdev.petfinderapp_kotlin.databinding.FragmentPetNearYouBinding
-import com.mahrukhdev.petfinderapp_kotlin.ui.adapters.FavoriteItemAdapter
 import com.mahrukhdev.petfinderapp_kotlin.ui.adapters.GridListAdapter
+import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.AnimalViewModel
 import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
-import com.mahrukhdev.petfinderapp_kotlin.utils.hideActionBar
 
 class PetNearYouFragment : BaseFragmentV2<FragmentPetNearYouBinding>(R.layout.fragment_pet_near_you) {
 
+    private val viewModel: AnimalViewModel by viewModels()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-        val animalList = Datasource().loadPetsNearYou()
-        binding.petNearRecyclerView.adapter = this.context?.let { GridListAdapter(it, animalList) }
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
 
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getAnimals(object : AnimalCallback {
+            override fun onAnimalsReceived(animalList: List<Animal>) {
+                val adapter = GridListAdapter(animalList)
+                binding.petNearRecyclerView.adapter = adapter
+            }
+            override fun onError(message: String) {
+                // Handle the error here
+                Log.d("ANIMAL", message)
+            }
+        })
+
+
+
+    }
 }

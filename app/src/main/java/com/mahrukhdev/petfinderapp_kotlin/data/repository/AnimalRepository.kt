@@ -1,8 +1,11 @@
 package com.mahrukhdev.petfinderapp_kotlin.data.repository
 
 import android.util.Log
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.MutableLiveData
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
+import com.mahrukhdev.petfinderapp_kotlin.data.model.AnimalCallback
+import com.mahrukhdev.petfinderapp_kotlin.data.model.AnimalResponse
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Type
 import com.mahrukhdev.petfinderapp_kotlin.data.model.TypeX
 import com.mahrukhdev.petfinderapp_kotlin.data.remote.PetApiClient
@@ -10,36 +13,55 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import com.mahrukhdev.petfinderapp_kotlin.data.remote.PetApiInterface
+import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.TokenViewModel
 import com.mahrukhdev.petfinderapp_kotlin.utils.Constants
 
 class AnimalRepository {
 
     private val apiInterface = PetApiClient.getPetApiClient().create(PetApiInterface::class.java)
 
-    fun getAnimals() : MutableLiveData<List<Animal>?>{
-        val call = apiInterface.getAnimals("Bearer ${Constants.TOKEN_VALUE.value}")
+    fun getAnimals(callback: AnimalCallback) {
+        var call: Call<AnimalResponse> = apiInterface.getAnimals("")
 
-        var data = MutableLiveData<List<Animal>?>()
+        var data = MutableLiveData<List<Animal>>()
+        val tvm = TokenViewModel()
+        tvm.getToken { token ->
+            // Use the token here
+            if (token != null) {
+                call= apiInterface.getAnimals("Bearer ${token}")
+                Log.d("HOME TOKEN VALUE", token ?: "Token data is null")
 
-        call.enqueue(object : Callback<List<Animal>> {
-            override fun onResponse(call: Call<List<Animal>>,
-                                    response: Response<List<Animal>>) {
-                if (response.isSuccessful) {
-                    var animals = response.body()
-                    data.value = animals
-                    Log.d("ANIMAL", animals?.first()?.name ?: "ERRORSS")
-                    // Handle the list of animals here
-                } else {
-                    // Handle error response
-                }
+                call.enqueue(object : Callback<AnimalResponse> {
+                    override fun onResponse(call: Call<AnimalResponse>, response: Response<AnimalResponse>) {
+                        if (response.isSuccessful) {
+                            var animalResponse = response.body()
+                            data.value = animalResponse!!.animals
+                            callback.onAnimalsReceived(animalResponse!!.animals)
+                            Log.d("ANIMAL", data.value!!.first().name ?: "ERRORSS")
+                            // Handle the list of animals here
+                        } else {
+                            // Handle error response
+                            Log.d("ANIMAL", "ERRORSS ONLYY")
+                            callback.onError("Error Getting Animals")
+                        }
+                    }
+
+                    override fun onFailure(call: Call<AnimalResponse>, t: Throwable) {
+                        // Handle network or other errors
+                        val errorMessage = "Network Error: ${t.localizedMessage}"
+                        Log.d("ANIMAL", errorMessage)
+                        Log.d("ANIMAL", "ON FAILURE ERRORSS")
+                        callback.onError(errorMessage)
+                    }
+                })
+
+
+            } else {
+                // Handle the case when token is null
+                println("Token is null")
             }
+        }
 
-            override fun onFailure(call: Call<List<Animal>>, t: Throwable) {
-                // Handle network or other errors
-            }
-        })
-
-        return data
     }
 
     fun getAnimalById(animalID: String): MutableLiveData<Animal?>{

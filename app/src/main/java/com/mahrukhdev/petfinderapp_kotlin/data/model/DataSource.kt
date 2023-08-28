@@ -2,20 +2,13 @@ package com.mahrukhdev.petfinderapp_kotlin.data.model
 
 class Datasource {
 
-    fun loadFavAnimals(): List<Animal>{
-        return listOf<Animal>(
-        )
+    var animalList: MutableList<Animal> = mutableListOf()
+    fun loadFavAnimals(): MutableList<Animal>{
+        return animalList
     }
 
-    fun loadPetsNearYou(): List<Animal> {
-        return listOf<Animal>(
-        )
+    fun addAnimals(animals:  List<Animal>){
+        animalList.addAll(0, animals)
     }
 
-    fun loadPetCategory(category: String): List<Animal>{
-
-        return listOf<Animal>(
-
-        )
-    }
 }
