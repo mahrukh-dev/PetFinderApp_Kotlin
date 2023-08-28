@@ -18,6 +18,7 @@ import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.SignUpViewModel
 import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
 import com.mahrukhdev.petfinderapp_kotlin.ui.views.home.HomeActivity
 import com.mahrukhdev.petfinderapp_kotlin.utils.hideActionBar
+import com.mahrukhdev.petfinderapp_kotlin.utils.isValidEmail
 
 class SignUpFragment : BaseFragmentV2<FragmentSignUpBinding>(R.layout.fragment_sign_up) {
 
@@ -104,9 +105,6 @@ class SignUpFragment : BaseFragmentV2<FragmentSignUpBinding>(R.layout.fragment_s
 
     }
 
-    private fun isValidEmail(email: String): Boolean {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
 
     override fun onResume() {
         super.onResume()
