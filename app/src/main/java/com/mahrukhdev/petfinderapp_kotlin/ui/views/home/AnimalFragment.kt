@@ -14,5 +14,8 @@ class AnimalFragment : BaseFragmentV2<FragmentAnimalBinding>(R.layout.fragment_a
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+
     }
 }

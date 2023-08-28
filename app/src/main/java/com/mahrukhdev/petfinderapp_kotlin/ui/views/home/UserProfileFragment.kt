@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mahrukhdev.petfinderapp_kotlin.R
@@ -20,16 +21,12 @@ import com.mahrukhdev.petfinderapp_kotlin.ui.views.base.BaseFragmentV2
 class UserProfileFragment : BaseFragmentV2<FragmentUserProfileBinding>(R.layout.fragment_user_profile){
 
 
-    val database = FirebaseDatabase.getInstance()
-
-    // Reference to the "users" node
-    val usersRef = database.getReference("users")
-
-    // User ID for the user you want to retrieve data for
-    val userId = FirebaseAuth.getInstance().currentUser?.uid
+    private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private val usersRef: DatabaseReference = database.getReference("users")
+    val userId: String? = FirebaseAuth.getInstance().currentUser?.uid
 
     // Add a listener to retrieve data for the user
-    val userListener = object : ValueEventListener {
+    private val userListener = object : ValueEventListener {
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             // Check if the user exists
             if (dataSnapshot.hasChild(userId!!)) {
@@ -40,9 +37,6 @@ class UserProfileFragment : BaseFragmentV2<FragmentUserProfileBinding>(R.layout.
                 binding.userProfileEmailTxt.text = email
                 binding.userProfileNameTxt.text = name
                 binding.userProfileUsernameTxt.text = username
-
-                // Do something with the retrieved data
-                // For example, update UI elements
             } else {
                 // User not found
             }
@@ -58,14 +52,11 @@ class UserProfileFragment : BaseFragmentV2<FragmentUserProfileBinding>(R.layout.
 
         usersRef.addListenerForSingleValueEvent(userListener)
 
-
-
         val auth: FirebaseAuth = FirebaseAuth.getInstance()
         binding.userLogoutBtn.setOnClickListener {
             auth.signOut()
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

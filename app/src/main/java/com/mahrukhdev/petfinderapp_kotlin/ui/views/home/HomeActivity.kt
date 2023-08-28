@@ -6,6 +6,7 @@ import android.os.Handler
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
@@ -69,14 +70,10 @@ class HomeActivity : AppCompatActivity() {
         navigationView.setupWithNavController(navController)
 
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-
         listener = NavController.OnDestinationChangedListener{ controller, destination, arguments ->
 
 
         }
-
-
-
         setupActionBarWithNavController(navController)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -85,29 +82,22 @@ class HomeActivity : AppCompatActivity() {
 
         handler.postDelayed(runnable, 3600)
 
-
-
-
-//        Constants.TOKEN_VALUE.observe(this, Observer {
-//            //txtV.text= TOKEN_VALUE.value
-//        })
-//
-//        val vm = AnimalViewModel()
-//        vm.getAnimals()
-//
-//
-//        vm.animalListLiveData?.observe(this, Observer {
-//            if (it != null) {
-//                for (a in it) {
-//                    Log.d("Home", a.name)
-//                    println(a.name)
-//                   // txtV.text = it.first().name
-//                }
-//            } else {
-//                Log.d("HOME", "error")
-//            }
-    //    }
-    //)
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            // Handle the item click here
+            when (menuItem.itemId) {
+                R.id.homeFragment -> {
+                    navController.navigate(R.id.action_petNearYouFragment_self)
+                    true
+                }
+                else -> {
+                    val action = PetNearYouFragmentDirections.actionPetNearYouFragmentToPetCategoryFragment(
+                        menuItem.title as String
+                    )
+                    navController.navigate(action)
+                    true
+                }
+            }
+        }
 
     }
 
@@ -121,7 +111,6 @@ class HomeActivity : AppCompatActivity() {
         super.onPause()
         navController.removeOnDestinationChangedListener(listener)
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.home_nav_host)

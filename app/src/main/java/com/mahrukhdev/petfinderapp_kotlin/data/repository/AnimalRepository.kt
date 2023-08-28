@@ -64,6 +64,40 @@ class AnimalRepository {
 
     }
 
+    fun getAnimalsByType(type: String, callback: (List<Animal>?, String?) -> Unit) {
+        val tvm = TokenViewModel()
+        tvm.getToken { token ->
+            if (token != null) {
+                val call: Call<AnimalResponse> = apiInterface.getAnimalsByType("Bearer $token", type)
+                call.enqueue(object : Callback<AnimalResponse> {
+                    override fun onResponse(call: Call<AnimalResponse>, response: Response<AnimalResponse>) {
+                        if (response.isSuccessful) {
+                            val animalResponse = response.body()
+                            val animals = animalResponse?.animals
+
+                            Log.d("ANIMAL TYPE", animals!!.first().name ?: "ERRORSS")
+                            callback(animals, null)
+
+                        } else {
+
+                            Log.d("ANIMAL TYPE", "ERRORSS")
+                            callback(null, "Unsuccessful response: ${response.code()}")
+                        }
+                    }
+
+                    override fun onFailure(call: Call<AnimalResponse>, t: Throwable) {
+                        val errorMessage = "Network Error: ${t.localizedMessage}"
+
+                        Log.d("ANIMAL TYPE", errorMessage)
+                        callback(null, errorMessage)
+                    }
+                })
+            } else {
+                callback(null, "Token is null")
+            }
+        }
+    }
+
     fun getAnimalById(animalID: String): MutableLiveData<Animal?>{
 
         val call = apiInterface.getAnimalById("Bearer ${Constants.TOKEN_VALUE.value}", animalID)

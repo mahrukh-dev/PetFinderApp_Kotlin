@@ -30,6 +30,18 @@ class AnimalViewModel: ViewModel() {
             }
         })
     }
+    fun getAnimalsByType(type: String, callback: AnimalCallback) {
+        animalRepository?.// Call the function and provide a callback to handle the results
+        getAnimalsByType(type) { animals, errorMessage ->
+            if (animals != null) {
+                callback.onAnimalsReceived(animals)
+            } else if (errorMessage != null) {
+                callback.onError(errorMessage)
+            } else {
+            }
+        }
+    }
+
 
 
 

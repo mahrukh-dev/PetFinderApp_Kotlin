@@ -36,6 +36,12 @@ public interface PetApiInterface {
         @Path("id") animalId: String
     ): Call<Animal>
 
+    @GET("/v2/animals")
+    fun getAnimalsByType(
+        @Header("Authorization") authorization: String,
+        @Query("type") type: String
+    ): Call<AnimalResponse>
+
     @GET("types")
     fun getAnimalTypes(
         @Header("Authorization") authorizationHeader: String
