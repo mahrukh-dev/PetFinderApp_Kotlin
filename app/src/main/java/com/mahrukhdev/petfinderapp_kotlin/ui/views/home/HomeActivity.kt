@@ -1,16 +1,9 @@
 package com.mahrukhdev.petfinderapp_kotlin.ui.views.home
 
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -21,10 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.mahrukhdev.petfinderapp_kotlin.R
-import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.AnimalViewModel
 import com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.TokenViewModel
-import com.mahrukhdev.petfinderapp_kotlin.utils.Constants
-import com.mahrukhdev.petfinderapp_kotlin.utils.Constants.TOKEN_VALUE
 
 
 class HomeActivity : AppCompatActivity() {
@@ -64,7 +54,7 @@ class HomeActivity : AppCompatActivity() {
         navController.graph = navGraph
 
         //setting bottom navigation
-        val navView: BottomNavigationView = findViewById(R.id.bottom_nav_view)
+        val navView: BottomNavigationView = findViewById(R.id.home_bottom_nav_view)
         navView.setupWithNavController(navController)
 
         drawerLayout = findViewById(R.id.home_drawer_layout)

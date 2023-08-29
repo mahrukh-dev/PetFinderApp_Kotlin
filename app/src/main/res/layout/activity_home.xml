@@ -24,22 +24,22 @@
             />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/home_constaint_layout"
-            style="@style/style_constraint_layout_home"
+            android:id="@+id/home_constraint_layout"
+            style="@style/style_constraint_layout"
             >
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/home_nav_host"
                 style="@style/style_nav_host_home"
                 app:defaultNavHost="true"
-                app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
+                app:layout_constraintBottom_toTopOf="@+id/home_bottom_nav_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:navGraph="@navigation/home_navgraph" />
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_nav_view"
+                android:id="@+id/home_bottom_nav_view"
                 style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
