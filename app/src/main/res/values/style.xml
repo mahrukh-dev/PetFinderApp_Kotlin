@@ -31,6 +31,11 @@
         <item name="android:layout_height">0dp</item>
     </style>
 
+    <style name="style_splash_img_main">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
     <style name="style_img_logo">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">@dimen/_210sdp</item>
