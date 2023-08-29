@@ -48,8 +48,9 @@ class PetNearYouFragment : BaseFragmentV2<FragmentPetNearYouBinding>(R.layout.fr
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.homeFragment -> {
+
                 view?.let { Navigation.findNavController(it).navigate(R.id.action_petNearYouFragment_self) }
-                view?.let { Navigation.findNavController(it).navigate(R.id.action_petCategoryFragment_to_petNearYouFragment) }
+//                view?.let { Navigation.findNavController(it).navigate(R.id.action_petCategoryFragment_to_petNearYouFragment) }
 
             }
             else -> {

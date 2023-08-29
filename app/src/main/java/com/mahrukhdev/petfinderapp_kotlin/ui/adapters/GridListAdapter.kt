@@ -50,7 +50,7 @@ class GridListAdapter(private val list: List<Animal>) : RecyclerView.Adapter<Gri
                     .load(photoUrl)
                     .into(holder.animalImg)
             } else {
-                holder.animalImg.setImageResource(R.drawable.logo)
+                holder.animalImg.setImageResource(R.drawable.default_four)
             }
 
 

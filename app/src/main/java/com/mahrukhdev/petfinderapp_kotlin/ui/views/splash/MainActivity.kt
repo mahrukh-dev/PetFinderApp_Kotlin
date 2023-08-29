@@ -24,13 +24,13 @@ class MainActivity : AppCompatActivity() {
 
         when (this?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                binding.mainLayout.background.alpha = 120
+                binding.mainConstraintLayout.background.alpha = 120
             }
             Configuration.UI_MODE_NIGHT_NO -> {
-                binding.mainLayout.background.alpha = 255
+                binding.mainConstraintLayout.background.alpha = 255
             }
             Configuration.UI_MODE_NIGHT_UNDEFINED -> {
-                binding.mainLayout.background.alpha = 255
+                binding.mainConstraintLayout.background.alpha = 255
             }
         }
 

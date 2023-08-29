@@ -30,40 +30,9 @@ class SignInFragment : BaseFragmentV2<FragmentSignInBinding>(R.layout.fragment_s
 
         auth = FirebaseAuth.getInstance()
 
-        binding.signinViewmodel = viewModel
+        binding.viewModel = viewModel
         binding.signinBtnSignin.setOnClickListener {
-            var email = binding.signinEditTextEmail.text.toString()
-            var pass = binding.signinEditTextPassword.text.toString()
-            if (email.isEmpty() || pass.isEmpty()){
-                if (email.isEmpty()) {
-                    binding.signinEditTextEmail.error = "Enter your email"
-                }
-                if (pass.isEmpty()) {
-                    binding.signinEditTextPassword.error = "Enter a password"
-                }
-                Toast.makeText(context, "Enter Valid Details", Toast.LENGTH_SHORT).show()
-            }
-            else if(!isValidEmail(email)){
-                binding.signinEditTextEmail.error = "Enter Valid Email Address"
-                Toast.makeText(context, "Enter Valid Email Address", Toast.LENGTH_SHORT).show()
-            }
-            else {
-                //authenticate and navigate to sign in
-
-                auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        Toast.makeText(context, "Sign in successful", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(context, HomeActivity::class.java)
-                        startActivity(intent)
-
-                    } else {
-                        // Sign-up failed
-                        Toast.makeText(context, "Something went wrong, try again", Toast.LENGTH_SHORT).show()
-                    }
-                }
-
-            }
-
+            onSignIn()
         }
         binding.signinTextSignup.setOnClickListener {
             findNavController().navigate(R.id.action_signIn_to_signUp)
@@ -74,14 +43,48 @@ class SignInFragment : BaseFragmentV2<FragmentSignInBinding>(R.layout.fragment_s
         super.onResume()
         when (context?.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_YES -> {
-                binding.signInLayout.background.alpha = 120
+                binding.signInConstraintLayout.background.alpha = 120
             }
             Configuration.UI_MODE_NIGHT_NO -> {
-                binding.signInLayout.background.alpha = 255
+                binding.signInConstraintLayout.background.alpha = 255
             }
             Configuration.UI_MODE_NIGHT_UNDEFINED -> {
-                binding.signInLayout.background.alpha = 255
+                binding.signInConstraintLayout.background.alpha = 255
             }
+        }
+    }
+
+    fun onSignIn(){
+        var email = binding.signinEditTextEmail.text.toString()
+        var pass = binding.signinEditTextPassword.text.toString()
+        if (email.isEmpty() || pass.isEmpty()){
+            if (email.isEmpty()) {
+                binding.signinEditTextEmail.error = "Enter your email"
+            }
+            if (pass.isEmpty()) {
+                binding.signinEditTextPassword.error = "Enter a password"
+            }
+            Toast.makeText(context, "Enter Valid Details", Toast.LENGTH_SHORT).show()
+        }
+        else if(!isValidEmail(email)){
+            binding.signinEditTextEmail.error = "Enter Valid Email Address"
+            Toast.makeText(context, "Enter Valid Email Address", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            //authenticate and navigate to sign in
+
+            auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(context, "Sign in successful", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(context, HomeActivity::class.java)
+                    startActivity(intent)
+
+                } else {
+                    // Sign-up failed
+                    Toast.makeText(context, "Something went wrong, try again", Toast.LENGTH_SHORT).show()
+                }
+            }
+
         }
     }
 

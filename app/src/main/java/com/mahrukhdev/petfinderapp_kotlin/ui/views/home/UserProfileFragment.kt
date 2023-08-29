@@ -33,10 +33,8 @@ class UserProfileFragment : BaseFragmentV2<FragmentUserProfileBinding>(R.layout.
                 val userDataSnapshot = dataSnapshot.child(userId)
                 val email = userDataSnapshot.child("email").getValue(String::class.java)
                 val name = userDataSnapshot.child("name").getValue(String::class.java)
-                val username = name + "101"
                 binding.userProfileEmailTxt.text = email
                 binding.userProfileNameTxt.text = name
-                binding.userProfileUsernameTxt.text = username
             } else {
                 // User not found
             }

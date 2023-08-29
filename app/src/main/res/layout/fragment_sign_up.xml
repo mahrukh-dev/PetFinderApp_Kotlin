@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="signup_viewmodel"
+            name="viewModel"
             type="com.mahrukhdev.petfinderapp_kotlin.ui.viewmodels.SignUpViewModel" />
     </data>
 
@@ -32,11 +32,14 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_name"
-                style="@style/style_edit_text_name_sign_up_frag" />
+                style="@style/style_edit_text_name_sign_up_frag"
+                android:text="@={viewModel.name}"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_email"
+            app:startIconDrawable="@drawable/email"
             style="@style/style_text_field_email_login"
             app:layout_constraintEnd_toEndOf="@id/signup_text_name"
             app:layout_constraintStart_toStartOf="@id/signup_text_name"
@@ -44,11 +47,14 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_email"
-                style="@style/style_edit_text_email_login" />
+                style="@style/style_edit_text_email_login"
+                android:text="@={viewModel.email}"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_password"
+            app:startIconDrawable="@drawable/password"
             style="@style/style_text_field_password_login"
             app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="@id/signup_text_email"
@@ -57,11 +63,14 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_password"
-                style="@style/style_edit_text_password_login" />
+                style="@style/style_edit_text_password_login"
+                android:text="@={viewModel.password}"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_confirm_password"
+            app:startIconDrawable="@drawable/password"
             style="@style/style_text_field_confirm_password_sign_up_frag"
             app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="@id/signup_text_password"
@@ -70,7 +79,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_confirm_password"
-                style="@style/style_edit_text_confirm_password_sign_up_frag" />
+                style="@style/style_edit_text_confirm_password_sign_up_frag"
+                android:text="@={viewModel.cpassword}"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton

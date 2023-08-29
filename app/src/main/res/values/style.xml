@@ -213,52 +213,6 @@
         <item name="android:padding">@dimen/_43sdp</item>
     </style>
 
-    <style name="style_user_name_txt_profile_frag">
-
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/_20sdp</item>
-        <item name="android:text">@string/name</item>
-    </style>
-
-    <style name="style_user_username_txt_profile_frag">
-
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/_15sdp</item>
-        <item name="android:text">@string/username</item>
-    </style>
-
-    <style name="style_user_email_txt_profile_frag">
-
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/_15sdp</item>
-        <item name="android:text">@string/email</item>
-    </style>
-
-    <style name="style_user_profile_name_txt_profile_frag">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart">@dimen/_70sdp</item>
-        <item name="android:text">@string/your_name</item>
-    </style>
-
-    <style name="style_user_profile_username_txt_profile_frag">
-
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/_15sdp</item>
-        <item name="android:text">@string/your_username</item>
-    </style>
-
-    <style name="style_user_profile_email_txt_profile_frag">
-
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/_15sdp</item>
-        <item name="android:text">@string/your_email</item>
-    </style>
 
     <style name="style_btn_logout_profile_frag">
 

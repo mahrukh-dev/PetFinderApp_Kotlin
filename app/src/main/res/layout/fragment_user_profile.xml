@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <!-- Your data bindings here -->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,49 +12,53 @@
         style="@style/style_constraint_layout_profile_frag"
         tools:context=".ui.views.home.UserProfileFragment">
 
-
+        <!-- User Name -->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_name_txt"
-            style="@style/style_user_name_txt_profile_frag"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/user_username_txt"
-            style="@style/style_user_username_txt_profile_frag"
+            android:id="@+id/user_profile_name_txt"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="YOUR NAME"
             app:layout_constraintStart_toStartOf="@+id/user_name_txt"
             app:layout_constraintTop_toBottomOf="@+id/user_name_txt" />
 
+        <!-- User Email -->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_email_txt"
-            style="@style/style_user_email_txt_profile_frag"
-            app:layout_constraintStart_toStartOf="@+id/user_username_txt"
-            app:layout_constraintTop_toBottomOf="@+id/user_username_txt" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/user_profile_name_txt"
-            style="@style/style_user_profile_name_txt_profile_frag"
-            app:layout_constraintStart_toEndOf="@+id/user_name_txt"
-            app:layout_constraintTop_toTopOf="@+id/user_name_txt" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/user_profile_username_txt"
-            style="@style/style_user_profile_username_txt_profile_frag"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="EMAIL"
             app:layout_constraintStart_toStartOf="@+id/user_profile_name_txt"
             app:layout_constraintTop_toBottomOf="@+id/user_profile_name_txt" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_profile_email_txt"
-            style="@style/style_user_profile_email_txt_profile_frag"
-            app:layout_constraintStart_toStartOf="@+id/user_profile_username_txt"
-            app:layout_constraintTop_toBottomOf="@+id/user_profile_username_txt" />
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="YOUR EMAIL"
+            app:layout_constraintStart_toStartOf="@+id/user_email_txt"
+            app:layout_constraintTop_toBottomOf="@+id/user_email_txt" />
 
+        <!-- Logout Button -->
         <Button
             android:id="@+id/user_logout_btn"
             style="@style/style_btn_logout_profile_frag"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

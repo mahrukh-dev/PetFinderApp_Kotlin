@@ -67,10 +67,10 @@ class HomeActivity : AppCompatActivity() {
 
         }
         setupActionBarWithNavController(navController)
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.hamburger)
-        }
+//        supportActionBar?.apply {
+//            setDisplayHomeAsUpEnabled(true)
+//            setHomeAsUpIndicator(R.drawable.hamburger)
+//        }
 
         handler.postDelayed(runnable, 3600)
 
