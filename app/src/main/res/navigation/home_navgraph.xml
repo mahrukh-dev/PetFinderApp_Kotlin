@@ -8,14 +8,14 @@
     <fragment
         android:id="@+id/animalFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.AnimalFragment"
-        android:label="fragment_animal"
+        android:label="Animal"
         tools:layout="@layout/fragment_animal" />
 
     <fragment
         android:id="@+id/petNearYouFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.PetNearYouFragment"
-        android:label="fragment_pet_near_you"
-        tools:layout="@layout/fragment_pet_near_you" >
+        android:label="Home"
+        tools:layout="@layout/fragment_pet_near_you">
 
         <action
             android:id="@+id/action_petNearYouFragment_to_animalFragment"
@@ -25,10 +25,6 @@
             android:id="@+id/action_petNearYouFragment_to_petCategoryFragment"
             app:destination="@id/petCategoryFragment" />
 
-        <argument
-            android:name="categoryName"
-            app:argType="string"
-            android:defaultValue="Dog" />
         <action
             android:id="@+id/action_petNearYouFragment_self"
             app:destination="@id/petNearYouFragment" />
@@ -38,8 +34,8 @@
     <fragment
         android:id="@+id/petCategoryFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.PetCategoryFragment"
-        android:label="fragment_pet_category"
-        tools:layout="@layout/fragment_pet_category" >
+        android:label="Pet Category"
+        tools:layout="@layout/fragment_pet_category">
 
         <action
             android:id="@+id/action_petCategoryFragment_to_animalFragment"
@@ -51,8 +47,8 @@
 
         <argument
             android:name="categoryName"
-            app:argType="string"
-            android:defaultValue="Dog" />
+            android:defaultValue="Dog"
+            app:argType="string" />
         <action
             android:id="@+id/action_petCategoryFragment_to_petNearYouFragment"
             app:destination="@id/petNearYouFragment" />
@@ -62,8 +58,8 @@
     <fragment
         android:id="@+id/favoritePetFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.FavoritePetFragment"
-        android:label="fragment_favorite_pet"
-        tools:layout="@layout/fragment_favorite_pet" >
+        android:label="Favorite Pets"
+        tools:layout="@layout/fragment_favorite_pet">
 
         <action
             android:id="@+id/action_favoritePetFragment_to_animalFragment"
@@ -74,7 +70,7 @@
     <fragment
         android:id="@+id/userProfileFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.UserProfileFragment"
-        android:label="fragment_user_profile"
+        android:label="My Profile"
         tools:layout="@layout/fragment_user_profile" />
 
 </navigation>
