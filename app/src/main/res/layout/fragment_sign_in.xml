@@ -11,12 +11,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/sign_in_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/sign_in_constraint_layout"
         tools:context=".ui.views.auth.SignInFragment"
-        android:background="@drawable/background">
-
+        style="@style/style_constraint_layout_sign_in_frag"
+        >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/signin_img_logo"
@@ -49,23 +47,20 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signin_edit_text_password"
                 style="@style/style_edit_text_password_login"
-                android:maxLines="1" />
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signin_btn_signin"
-            style="@style/style_btn_signin"
-
+            style="@style/style_btn_sign_in_frag"
             app:layout_constraintEnd_toEndOf="@+id/signin_text_password"
             app:layout_constraintStart_toStartOf="@+id/signin_text_password"
             app:layout_constraintTop_toBottomOf="@+id/signin_text_password" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/signin_text_signup"
-            style="@style/style_text_signup"
+            style="@style/style_text_sign_in_frag"
             app:layout_constraintEnd_toEndOf="@+id/signin_btn_signin"
             app:layout_constraintTop_toBottomOf="@+id/signin_btn_signin" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -8,93 +8,50 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/userConstraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
-        android:padding="50dp"
+        android:id="@+id/user_constraint_layout"
+        style="@style/style_constraint_layout_profile_frag"
         tools:context=".ui.views.home.UserProfileFragment">
 
 
-        <ImageView
-            android:id="@+id/user_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_name_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:text="Name"
+            style="@style/style_user_name_txt_profile_frag"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_img" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_username_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Username"
+            style="@style/style_user_username_txt_profile_frag"
             app:layout_constraintStart_toStartOf="@+id/user_name_txt"
             app:layout_constraintTop_toBottomOf="@+id/user_name_txt" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_email_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Email"
+            style="@style/style_user_email_txt_profile_frag"
             app:layout_constraintStart_toStartOf="@+id/user_username_txt"
             app:layout_constraintTop_toBottomOf="@+id/user_username_txt" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_profile_name_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="40dp"
-            android:text="Your Name"
+            style="@style/style_user_profile_name_txt_profile_frag"
             app:layout_constraintStart_toEndOf="@+id/user_name_txt"
-            app:layout_constraintTop_toBottomOf="@+id/user_img" />
+            app:layout_constraintTop_toTopOf="@+id/user_name_txt" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_profile_username_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Your UserName"
+            style="@style/style_user_profile_username_txt_profile_frag"
             app:layout_constraintStart_toStartOf="@+id/user_profile_name_txt"
             app:layout_constraintTop_toBottomOf="@+id/user_profile_name_txt" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/user_profile_email_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Your Email"
+            style="@style/style_user_profile_email_txt_profile_frag"
             app:layout_constraintStart_toStartOf="@+id/user_profile_username_txt"
             app:layout_constraintTop_toBottomOf="@+id/user_profile_username_txt" />
 
-        <TextView
-            android:id="@+id/user_password_change_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Change Password"
-            app:layout_constraintStart_toStartOf="@+id/user_email_txt"
-            app:layout_constraintTop_toBottomOf="@+id/user_email_txt" />
-
         <Button
             android:id="@+id/user_logout_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
+            style="@style/style_btn_logout_profile_frag"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

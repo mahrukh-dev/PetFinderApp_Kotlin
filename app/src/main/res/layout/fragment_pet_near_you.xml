@@ -9,17 +9,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/pet_near_you_constraint_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/style_constraint_layout"
         tools:context=".ui.views.home.PetNearYouFragment"
         android:background="@drawable/background">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/pet_near_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10dp"
+            style="@style/style_recycler_view_pet_near_you_frag"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

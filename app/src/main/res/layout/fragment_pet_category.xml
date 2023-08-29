@@ -9,17 +9,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/pet_category_constraint_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
-        android:padding="15dp"
+        style="@style/style_constraint_layout_pet_category_frag"
         tools:context=".ui.views.home.PetCategoryFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/pet_category_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            style="@style/style_recycler_view_pet_category_frag"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -4,18 +4,18 @@
     android:id="@+id/grid_item_card"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/style_card_view_grid_list_frag"
+    style="@style/style_card_view_grid_list_item"
     app:cardBackgroundColor="@color/md_theme_light_primary"
     app:cardCornerRadius="@dimen/_12sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/grid_item_constraint_layout"
-        style="@style/style_constraint_layout_grid_list_frag"
+        style="@style/style_constraint_layout_grid_list_item"
         >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/grid_item_img"
-            style="@style/style_img_grid_list_frag"
+            style="@style/style_img_grid_list_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -23,19 +23,19 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/grid_item_id"
-            style="@style/style_id_txt_grid_list_frag"
+            style="@style/style_id_txt_grid_list_item"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/grid_item_img" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/grid_item_name"
-            style="@style/style_name_txt_grid_list_frag"
+            style="@style/style_name_txt_grid_list_item"
             app:layout_constraintStart_toStartOf="@+id/grid_item_id"
             app:layout_constraintTop_toBottomOf="@+id/grid_item_id" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/grid_item_type"
-            style="@style/style_type_txt_grid_list_frag"
+            style="@style/style_type_txt_grid_list_item"
             app:layout_constraintStart_toStartOf="@+id/grid_item_name"
             app:layout_constraintTop_toBottomOf="@+id/grid_item_name" />
 

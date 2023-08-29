@@ -11,10 +11,8 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/signUpLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:id="@+id/sign_up_constraint_layout"
+        style="@style/style_constraint_layout_sign_up_frag"
         tools:context=".ui.views.auth.SignUpFragment">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -27,14 +25,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_name"
             app:startIconDrawable="@drawable/name"
-            style="@style/style_text_field_name_signup"
+            style="@style/style_text_field_name_sign_up_frag"
             app:layout_constraintEnd_toEndOf="@id/signup_img_logo"
             app:layout_constraintStart_toStartOf="@id/signup_img_logo"
             app:layout_constraintTop_toBottomOf="@id/signup_img_logo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_name"
-                style="@style/style_edit_text_name_signup" />
+                style="@style/style_edit_text_name_sign_up_frag" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +62,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signup_text_confirm_password"
-            style="@style/style_text_field_confirm_password_signup"
+            style="@style/style_text_field_confirm_password_sign_up_frag"
             app:passwordToggleEnabled="true"
             app:layout_constraintEnd_toEndOf="@id/signup_text_password"
             app:layout_constraintStart_toStartOf="@id/signup_text_password"
@@ -72,19 +70,19 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_edit_text_confirm_password"
-                style="@style/style_edit_text_confirm_password_signup" />
+                style="@style/style_edit_text_confirm_password_sign_up_frag" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_btn_signup"
-            style="@style/style_btn_signup"
+            style="@style/style_btn_sign_up_frag"
             app:layout_constraintEnd_toEndOf="@+id/signup_text_confirm_password"
             app:layout_constraintStart_toStartOf="@+id/signup_text_confirm_password"
             app:layout_constraintTop_toBottomOf="@+id/signup_text_confirm_password" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/signup_text_signin"
-            style="@style/style_text_signin"
+            style="@style/style_text_signin_sign_up_frag"
             app:layout_constraintEnd_toEndOf="@+id/signup_btn_signup"
             app:layout_constraintTop_toBottomOf="@+id/signup_btn_signup" />
 

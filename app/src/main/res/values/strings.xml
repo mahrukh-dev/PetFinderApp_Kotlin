@@ -19,4 +19,11 @@
     <string name="animal_id">Animal ID</string>
     <string name="animal_name">Animal Name</string>
     <string name="animal_type">Animal Type</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_username">Your UserName</string>
+    <string name="your_email">Your Email</string>
+    <string name="logout">Logout</string>
 </resources>

@@ -36,19 +36,19 @@
         <item name="android:layout_height">0dp</item>
     </style>
 
-    <style name="style_card_view_grid_list_frag">
+    <style name="style_card_view_grid_list_item">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">@dimen/_10sdp</item>
         <item name="android:elevation">@dimen/_10sdp</item>
     </style>
 
-    <style name="style_constraint_layout_grid_list_frag">
+    <style name="style_constraint_layout_grid_list_item">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/_200sdp</item>
     </style>
 
-    <style name="style_img_grid_list_frag">
+    <style name="style_img_grid_list_item">
         <item name="android:layout_width">@dimen/_100sdp</item>
         <item name="android:layout_height">@dimen/_100sdp</item>
         <item name="android:layout_marginStart">@dimen/_8sdp</item>
@@ -56,7 +56,7 @@
         <item name="android:layout_marginEnd">@dimen/_8sdp</item>
     </style>
 
-    <style name="style_id_txt_grid_list_frag">
+    <style name="style_id_txt_grid_list_item">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/_13sdp</item>
@@ -65,7 +65,7 @@
         <item name="android:textColor">@color/md_theme_light_onPrimary</item>
     </style>
 
-    <style name="style_name_txt_grid_list_frag">
+    <style name="style_name_txt_grid_list_item">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/_13sdp</item>
@@ -73,13 +73,40 @@
         <item name="android:textColor">@color/md_theme_light_onPrimary</item>
     </style>
 
-    <style name="style_type_txt_grid_list_frag">
+    <style name="style_type_txt_grid_list_item">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">@dimen/_13sdp</item>
         <item name="android:text">@string/animal_type</item>
         <item name="android:textColor">@color/md_theme_light_onPrimary</item>
     </style>
+
+    <style name="style_constraint_layout_pet_category_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/background</item>
+        <item name="android:padding">@dimen/_12sdp</item>
+    </style>
+
+    <style name="style_recycler_view_pet_category_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="style_recycler_view_pet_near_you_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/_8sdp</item>
+    </style>
+
+    <style name="style_constraint_layout_sign_in_frag">
+        <item name="android:background">@drawable/background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <style name="style_img_logo">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">@dimen/_210sdp</item>
@@ -109,9 +136,10 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">textPassword</item>
+        <item name="android:maxLines">1</item>
     </style>
 
-    <style name="style_btn_signin">
+    <style name="style_btn_sign_in_frag">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">@dimen/_40sdp</item>
         <item name="android:layout_marginTop">@dimen/_10sdp</item>
@@ -120,7 +148,7 @@
         <item name="android:textColor">@color/md_theme_light_onSecondary</item>
     </style>
 
-    <style name="style_text_signup">
+    <style name="style_text_sign_in_frag">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/sign_up</item>
@@ -129,31 +157,38 @@
         <item name="android:textSize">@dimen/_15sdp</item>
     </style>
 
-    <style name="style_text_field_name_signup">
+    <style name="style_constraint_layout_sign_up_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/background</item>
+    </style>
+
+    <style name="style_text_field_name_sign_up_frag">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:hint">"Name"</item>
     </style>
 
-    <style name="style_edit_text_name_signup">
+    <style name="style_edit_text_name_sign_up_frag">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">textPersonName</item>
     </style>
 
-    <style name="style_text_field_confirm_password_signup">
+    <style name="style_text_field_confirm_password_sign_up_frag">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:hint">"Confirm Password"</item>
     </style>
 
-    <style name="style_edit_text_confirm_password_signup">
+    <style name="style_edit_text_confirm_password_sign_up_frag">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:inputType">textPassword</item>
     </style>
 
-    <style name="style_btn_signup">
+
+    <style name="style_btn_sign_up_frag">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">@dimen/_40sdp</item>
         <item name="android:layout_marginTop">@dimen/_10sdp</item>
@@ -162,13 +197,76 @@
         <item name="android:textColor">@color/md_theme_light_onSecondary</item>
     </style>
 
-    <style name="style_text_signin">
+    <style name="style_text_signin_sign_up_frag">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/sign_in</item>
         <item name="android:layout_marginTop">@dimen/_5sdp</item>
         <item name="android:textColor">@color/md_theme_dark_background</item>
         <item name="android:textSize">@dimen/_15sdp</item>
+    </style>
+
+    <style name="style_constraint_layout_profile_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/background</item>
+        <item name="android:padding">@dimen/_43sdp</item>
+    </style>
+
+    <style name="style_user_name_txt_profile_frag">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/_20sdp</item>
+        <item name="android:text">@string/name</item>
+    </style>
+
+    <style name="style_user_username_txt_profile_frag">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:text">@string/username</item>
+    </style>
+
+    <style name="style_user_email_txt_profile_frag">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:text">@string/email</item>
+    </style>
+
+    <style name="style_user_profile_name_txt_profile_frag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/_70sdp</item>
+        <item name="android:text">@string/your_name</item>
+    </style>
+
+    <style name="style_user_profile_username_txt_profile_frag">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:text">@string/your_username</item>
+    </style>
+
+    <style name="style_user_profile_email_txt_profile_frag">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_15sdp</item>
+        <item name="android:text">@string/your_email</item>
+    </style>
+
+    <style name="style_btn_logout_profile_frag">
+
+        <item name="android:backgroundTint">@color/md_theme_light_surfaceTint</item>
+        <item name="android:textColor">@color/md_theme_light_onSecondary</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/logout</item>
     </style>
 
 </resources>
