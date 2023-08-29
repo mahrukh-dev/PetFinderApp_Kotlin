@@ -16,4 +16,7 @@
     <string name="pet_category_six">Bird</string>
     <string name="pet_category_seven"><![CDATA[Scales, Fins & Other]]></string>
     <string name="pet_category_eight">Barnyard</string>
+    <string name="animal_id">Animal ID</string>
+    <string name="animal_name">Animal Name</string>
+    <string name="animal_type">Animal Type</string>
 </resources>

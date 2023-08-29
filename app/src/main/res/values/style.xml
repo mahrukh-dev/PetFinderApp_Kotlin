@@ -36,6 +36,50 @@
         <item name="android:layout_height">0dp</item>
     </style>
 
+    <style name="style_card_view_grid_list_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_10sdp</item>
+        <item name="android:elevation">@dimen/_10sdp</item>
+    </style>
+
+    <style name="style_constraint_layout_grid_list_frag">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_200sdp</item>
+    </style>
+
+    <style name="style_img_grid_list_frag">
+        <item name="android:layout_width">@dimen/_100sdp</item>
+        <item name="android:layout_height">@dimen/_100sdp</item>
+        <item name="android:layout_marginStart">@dimen/_8sdp</item>
+        <item name="android:layout_marginTop">@dimen/_8sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_8sdp</item>
+    </style>
+
+    <style name="style_id_txt_grid_list_frag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/_13sdp</item>
+        <item name="android:layout_marginTop">@dimen/_13sdp</item>
+        <item name="android:text">@string/animal_id</item>
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
+    </style>
+
+    <style name="style_name_txt_grid_list_frag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_13sdp</item>
+        <item name="android:text">@string/animal_name</item>
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
+    </style>
+
+    <style name="style_type_txt_grid_list_frag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_13sdp</item>
+        <item name="android:text">@string/animal_type</item>
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
+    </style>
     <style name="style_img_logo">
         <item name="android:layout_width">@dimen/_200sdp</item>
         <item name="android:layout_height">@dimen/_210sdp</item>
