@@ -53,6 +53,9 @@
             android:name="categoryName"
             app:argType="string"
             android:defaultValue="Dog" />
+        <action
+            android:id="@+id/action_petCategoryFragment_to_petNearYouFragment"
+            app:destination="@id/petNearYouFragment" />
 
     </fragment>
 

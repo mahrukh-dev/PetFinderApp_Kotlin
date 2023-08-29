@@ -2,8 +2,12 @@ package com.mahrukhdev.petfinderapp_kotlin.ui.views.home
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
 import com.mahrukhdev.petfinderapp_kotlin.data.model.AnimalCallback
@@ -24,7 +28,7 @@ class PetNearYouFragment : BaseFragmentV2<FragmentPetNearYouBinding>(R.layout.fr
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setHasOptionsMenu(true)
         viewModel.getAnimals(object : AnimalCallback {
             override fun onAnimalsReceived(animalList: List<Animal>) {
                 val adapter = GridListAdapter(animalList)
@@ -35,8 +39,28 @@ class PetNearYouFragment : BaseFragmentV2<FragmentPetNearYouBinding>(R.layout.fr
                 Log.d("ANIMAL", message)
             }
         })
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_drawer_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.homeFragment -> {
+                view?.let { Navigation.findNavController(it).navigate(R.id.action_petNearYouFragment_self) }
+                view?.let { Navigation.findNavController(it).navigate(R.id.action_petCategoryFragment_to_petNearYouFragment) }
 
-
+            }
+            else -> {
+                val action = PetNearYouFragmentDirections.actionPetNearYouFragmentToPetCategoryFragment(
+                    item.title as String
+                )
+                view?.let { Navigation.findNavController(it).navigate(action) }
+            }
+        }
+        return true
     }
 }
+
+

@@ -4,6 +4,8 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
@@ -82,29 +84,33 @@ class HomeActivity : AppCompatActivity() {
 
         handler.postDelayed(runnable, 3600)
 
-        navigationView.setNavigationItemSelectedListener { menuItem ->
-            // Handle the item click here
-            when (menuItem.itemId) {
-                R.id.homeFragment -> {
-                    navController.navigate(R.id.action_petNearYouFragment_self)
-                    true
-                }
-                else -> {
-                    val action = PetNearYouFragmentDirections.actionPetNearYouFragmentToPetCategoryFragment(
-                        menuItem.title as String
-                    )
-                    navController.navigate(action)
-                    true
-                }
-            }
-        }
+//        var listenerTwo = navigationView.setNavigationItemSelectedListener { menuItem ->
+//            // Handle the item click here
+//            when (menuItem.itemId) {
+//                R.id.homeFragment -> {
+//                    navController.navigate(R.id.action_petNearYouFragment_self)
+//                    true
+//                }
+//                else -> {
+//                    val action = PetNearYouFragmentDirections.actionPetNearYouFragmentToPetCategoryFragment(
+//                        menuItem.title as String
+//                    )
+//                    navController.navigate(action)
+//                    true
+//                }
+//            }
+//        }
+
+       // navController.addOnDestinationChangedListener(listener)
 
     }
+
 
 
     override fun onResume() {
         super.onResume()
         navController.addOnDestinationChangedListener(listener)
+
     }
 
     override fun onPause() {
