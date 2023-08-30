@@ -11,9 +11,12 @@ import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
 import com.squareup.picasso.Picasso
 
 
-class GridListAdapter(private val list: List<Animal>) : RecyclerView.Adapter<GridListAdapter.ItemViewHolder>() {
+class GridListAdapter(
+    private val list: List<Animal>,  private val onClickFunction: (Int) -> Unit
+) :
+    RecyclerView.Adapter<GridListAdapter.ItemViewHolder>() {
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view){
+    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val animalIdTxt: TextView = view.findViewById(R.id.grid_item_id)
         val animalNameTxt: TextView = view.findViewById(R.id.grid_item_name)
         val animalTypeTxt: TextView = view.findViewById(R.id.grid_item_type)
@@ -39,26 +42,25 @@ class GridListAdapter(private val list: List<Animal>) : RecyclerView.Adapter<Gri
             // Bind data to the view holder for the non-empty list
             // Example: holder.bindData(dataList.get(position));
 
-            val item = list[position]
+            val item: Animal = list[position]
             holder.animalIdTxt.text = item.id.toString()
             holder.animalNameTxt.text = item.name.toString()
             holder.animalTypeTxt.text = item.type.toString()
             if (item.photos.isNotEmpty()) {
-                val photoUrl = item.photos.first().medium// Choose the appropriate size here
-
+                val photoUrl = item.photos.first().medium// Choose the appropriate size herea
                 Picasso.get()
                     .load(photoUrl)
                     .into(holder.animalImg)
             } else {
                 holder.animalImg.setImageResource(R.drawable.default_four)
             }
-
-
         }
 
-//        Glide.with(context)
-//            .load(photoUrl)
-//            .into(holder.animalImg)
+
+        holder.itemView.setOnClickListener {
+            onClickFunction(position)
+        }
+
     }
 
 }

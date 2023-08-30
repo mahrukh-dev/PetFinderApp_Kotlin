@@ -30,12 +30,14 @@ class UserProfileFragment : BaseFragmentV2<FragmentUserProfileBinding>(R.layout.
         override fun onDataChange(dataSnapshot: DataSnapshot) {
             // Check if the user exists
             if (dataSnapshot.hasChild(userId!!)) {
+                binding.progressBar2.visibility =View.GONE
                 val userDataSnapshot = dataSnapshot.child(userId)
                 val email = userDataSnapshot.child("email").getValue(String::class.java)
                 val name = userDataSnapshot.child("name").getValue(String::class.java)
                 binding.userProfileEmailTxt.text = email
                 binding.userProfileNameTxt.text = name
             } else {
+                binding.progressBar2.visibility =View.VISIBLE
                 // User not found
             }
         }
@@ -47,7 +49,7 @@ class UserProfileFragment : BaseFragmentV2<FragmentUserProfileBinding>(R.layout.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.progressBar2.visibility =View.VISIBLE
         usersRef.addListenerForSingleValueEvent(userListener)
 
         val auth: FirebaseAuth = FirebaseAuth.getInstance()

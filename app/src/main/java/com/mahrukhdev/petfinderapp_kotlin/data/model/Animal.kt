@@ -1,5 +1,8 @@
 package com.mahrukhdev.petfinderapp_kotlin.data.model
 
+import android.os.Parcelable
+import java.io.Serializable
+
 data class Animal(
     val _links: Links,
     val age: String,
@@ -24,4 +27,4 @@ data class Animal(
     val type: String,
     val url: String,
     val videos: List<Video>
-)
+): Serializable

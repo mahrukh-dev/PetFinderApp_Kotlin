@@ -9,7 +9,38 @@
         android:id="@+id/animalFragment"
         android:name="com.mahrukhdev.petfinderapp_kotlin.ui.views.home.AnimalFragment"
         android:label="Animal"
-        tools:layout="@layout/fragment_animal" />
+        tools:layout="@layout/fragment_animal" >
+
+        <argument
+            android:name="animal_id"
+            app:argType="string"
+            android:defaultValue="Animal ID" />
+        <argument
+            android:name="animal_name"
+            app:argType="string"
+            android:defaultValue="Animal Name" />
+        <argument
+            android:name="animal_type"
+            app:argType="string"
+            android:defaultValue="Animal Type" />
+        <argument
+            android:name="animal_gender"
+            app:argType="string"
+            android:defaultValue="Animal Gender" />
+        <argument
+            android:name="animal_age"
+            app:argType="string"
+            android:defaultValue="Animal Age" />
+        <argument
+            android:name="animal_desc"
+            app:argType="string"
+            android:defaultValue="Animal Description" />
+        <argument
+            android:name="animal_address"
+            app:argType="string"
+            android:defaultValue="Animal Address" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/petNearYouFragment"

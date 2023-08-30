@@ -9,13 +9,14 @@ import com.mahrukhdev.petfinderapp_kotlin.data.model.AnimalCallback
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Datasource
 import com.mahrukhdev.petfinderapp_kotlin.data.repository.AnimalRepository
 
-class AnimalViewModel: ViewModel() {
+class AnimalViewModel : ViewModel() {
     private var animalRepository: AnimalRepository? = null
     var animalListLiveData = MutableLiveData<List<Animal>>().apply { value = emptyList() }
 
     init {
         animalRepository = AnimalRepository()
     }
+
     fun getAnimals(callback: AnimalCallback) {
         animalRepository?.getAnimals(object : AnimalCallback {
             override fun onAnimalsReceived(animals: List<Animal>) {
@@ -23,6 +24,7 @@ class AnimalViewModel: ViewModel() {
                 Log.d("ANIMAL", animals.firstOrNull()?.name ?: "No animals")
                 callback.onAnimalsReceived(animals)
             }
+
             override fun onError(message: String) {
                 // Handle the error here
                 Log.d("ANIMAL", message)
@@ -30,6 +32,7 @@ class AnimalViewModel: ViewModel() {
             }
         })
     }
+
     fun getAnimalsByType(type: String, callback: AnimalCallback) {
         animalRepository?.// Call the function and provide a callback to handle the results
         getAnimalsByType(type) { animals, errorMessage ->
@@ -41,8 +44,6 @@ class AnimalViewModel: ViewModel() {
             }
         }
     }
-
-
 
 
 }

@@ -11,9 +11,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class FavoriteItemAdapter(private val context: Context, private val list: List<Animal>) : RecyclerView.Adapter<FavoriteItemAdapter.ItemViewHolder>() {
+class FavoriteItemAdapter(private val context: Context, private val list: List<Animal>) :
+    RecyclerView.Adapter<FavoriteItemAdapter.ItemViewHolder>() {
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view){
+    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val animalIdTxt: TextView = view.findViewById(R.id.fav_item_id)
         val animalNameTxt: TextView = view.findViewById(R.id.fav_item_name)
         val animalTypeTxt: TextView = view.findViewById(R.id.fav_item_type)
@@ -41,8 +42,8 @@ class FavoriteItemAdapter(private val context: Context, private val list: List<A
 
         val photoUrl = item.photos.first().full // Choose the appropriate size here
         Glide.with(context)
-                .load(photoUrl)
-                .into(holder.animalImg)
+            .load(photoUrl)
+            .into(holder.animalImg)
 
 
     }

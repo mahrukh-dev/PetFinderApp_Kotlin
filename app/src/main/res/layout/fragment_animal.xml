@@ -15,14 +15,15 @@
         tools:context=".ui.views.home.AnimalFragment"
         android:padding="@dimen/_20sdp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/animal_img"
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/animal_map_view"
             android:layout_width="0dp"
             android:layout_height="358dp"
+            tools:context=".ui.views.home.AnimalFragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+             />
 
         <TextView
             android:id="@+id/animal_text_name"
@@ -32,17 +33,17 @@
             app:layout_constraintStart_toStartOf="@+id/animal_text_id"
             app:layout_constraintTop_toBottomOf="@+id/animal_text_id" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/animal_btn_fav"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:clickable="true"
-            android:contentDescription="add/remove favorite pet"
-            android:src="@drawable/heart_border"
-            app:layout_constraintEnd_toEndOf="@+id/animal_img"
-            app:layout_constraintTop_toBottomOf="@+id/animal_img" />
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/animal_btn_fav"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:clickable="true"-->
+<!--            android:contentDescription="add/remove favorite pet"-->
+<!--            android:src="@drawable/heart_border"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/animal_map_view"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/animal_map_view" />-->
 
         <TextView
             android:id="@+id/animal_text_type"
@@ -73,6 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Animal Description"
+            android:maxLines="5"
             app:layout_constraintStart_toStartOf="@+id/animal_text_age"
             app:layout_constraintTop_toBottomOf="@+id/animal_text_age" />
 
@@ -83,8 +85,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="Animal ID"
-            app:layout_constraintStart_toStartOf="@+id/animal_img"
-            app:layout_constraintTop_toBottomOf="@+id/animal_img" />
+            app:layout_constraintStart_toStartOf="@+id/animal_map_view"
+            app:layout_constraintTop_toBottomOf="@+id/animal_map_view" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

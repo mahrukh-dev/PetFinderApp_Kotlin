@@ -12,15 +12,30 @@
         style="@style/style_constraint_layout_pet_category_frag"
         tools:context=".ui.views.home.PetCategoryFragment">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/pet_category_recycler_view"
             style="@style/style_recycler_view_pet_category_frag"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             app:spanCount="2"
             tools:listitem="@layout/animal_grid_list_item" />
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/pet_category_recycler_view"
+            app:layout_constraintEnd_toEndOf="@+id/pet_category_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/pet_category_recycler_view"
+            app:layout_constraintTop_toTopOf="@+id/pet_category_recycler_view" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
