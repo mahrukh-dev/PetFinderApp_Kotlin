@@ -32,7 +32,7 @@
 - Pet near you fragment displays list of pets in random order
 - Menu option provides list of categories
 - on menu option click it moves to category fragment which displays data according to the category option selected
-
+- launcher icon changed
 
 
 # Screenshots
