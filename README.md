@@ -24,7 +24,14 @@
   - use of recycler views to create grid view and horizontal views
 - Use of retrofit and API calling
 - Login Activity implementation via FIREBASE AUTHENTICATION and REAL TIME Database
-- 
+- Use of Progress Bar
+- Integrated onclick of item functionality on Recycler View
+- Passing of arguments between fragments
+- Integrated Google Map in Single Pet View
+- Added Custom marker icon in google map
+- Pet near you fragment displays list of pets in random order
+- Menu option provides list of categories
+- on menu option click it moves to category fragment which displays data according to the category option selected
 
 
 
