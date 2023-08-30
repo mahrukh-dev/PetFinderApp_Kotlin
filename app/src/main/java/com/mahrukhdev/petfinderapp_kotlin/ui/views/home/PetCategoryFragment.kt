@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.mahrukhdev.petfinderapp_kotlin.R
 import com.mahrukhdev.petfinderapp_kotlin.data.model.Animal
@@ -27,7 +28,24 @@ class PetCategoryFragment : BaseFragmentV2<FragmentPetCategoryBinding>(R.layout.
         viewModel.getAnimalsByType(type, object : AnimalCallback {
             override fun onAnimalsReceived(animalList: List<Animal>) {
                 binding.progressBar3.visibility =View.GONE
-                val adapter = GridListAdapter(animalList) {}
+                val adapter = GridListAdapter(animalList) { singleAnimalPos: Int ->
+
+                    val action = PetCategoryFragmentDirections.actionPetCategoryFragmentToAnimalFragment(
+                        "Animal Id: " + animalList[singleAnimalPos].id.toString(),
+                        "Animal Name: " + animalList[singleAnimalPos].name,
+                        "Animal Type: " + animalList[singleAnimalPos].type,
+                        "Animal Gender: " + animalList[singleAnimalPos].gender,
+                        "Animal Age: " + animalList[singleAnimalPos].age,
+                        "Animal Description: " + animalList[singleAnimalPos].description,
+                        animalList[singleAnimalPos].contact.address.address1.toString() + " "
+                                + animalList[singleAnimalPos].contact.address.address2.toString() + " , "
+                                + animalList[singleAnimalPos].contact.address.city.toString() + " , "
+                                + animalList[singleAnimalPos].contact.address.state.toString() + " "
+                                + animalList[singleAnimalPos].contact.address.postcode.toString() + " , "
+                                + animalList[singleAnimalPos].contact.address.country.toString()
+                    )
+                    findNavController().navigate(action)
+                }
                 binding.petCategoryRecyclerView.adapter = adapter
             }
             override fun onError(message: String) {
